@@ -1,0 +1,62 @@
+{% extends "base/base.html"%}
+
+{% block titulo %} Actulizar {% endblock %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light btn-toolbar">
+    <div class="container-fluid">
+
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a type="button" class="btn btn-primary" aria-current="page" href="/listar">Home</a>
+                </li>
+                <li class="nav-item" style="text-align: left;">
+                    <a type="button" class="btn btn-primary" href="/mostrar">Agregar contacto</a>
+                </li>
+
+                <li class="nav-item" style="text-align: left;">
+                    <a type="button" class="btn btn-danger" href="/salir">salir</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+
+
+<div class="card mx-auto" style="width: 18rem; height: 22rem;">
+    <div class="container">
+        <form action="/actulizar/{{ed[0]}}" method="POST">
+            <div class="mb-6">
+                <div class="container">
+                    <h2>Actulizar datos</h2>
+                </div>
+
+                <label class="form-label">Nombre </label>
+                <input type="text" class="form-control" value="{{ed[1]}}" name="nombre">
+                <div id="emailHelp" class="form-text"></div>
+            </div>
+            <div class="mb-6">
+                <label class="form-label">Numero</label>
+                <input type="text" class="form-control" value="{{ed[2]}}" name="numero">
+            </div>
+            <div class="mb-6">
+                <label class="form-label">Ocupacion</label>
+                <input type="text" class="form-control"value="{{ed[3]}}" name="profecion">
+            </div>
+            <br>
+            <div class="container text">
+                <button type="submit" class="btn btn-primary">Actulizar</button>
+                <a href="{{url_for('listar')}}" class="btn btn-primary">Volver</a>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}
